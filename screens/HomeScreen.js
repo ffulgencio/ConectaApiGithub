@@ -4,8 +4,8 @@ import Ficha from "./Ficha";
 
 class HomeScreen extends Component {
 
-  goToProfilePage =() => {
-    this.props.navigation.navigate("Profile");
+  goToProfilePage =(data) => {
+    this.props.navigation.navigate("Profile", data);
   };
 
   render() {
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
     flex: 1,
     //margin:10,
     //color:'#fff'
-    backgroundColor:'#000'
+    backgroundColor:'#f0f1f0'
   }
 });

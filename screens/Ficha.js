@@ -18,7 +18,6 @@ class Ficha extends Component {
   };
 
   buscarUsuario = () => {
-
     const url = `https://api.github.com/search/users?q=${
       this.state.textoBuscar
     }`;
@@ -58,8 +57,8 @@ class Ficha extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        {this.state.usuarios.map(u => <Usuario verProfile={this.props.verProfile} key={u.id} {...u} />)}
+      <View>
+      <View  style={styles.container}>
         <TextInput
           style={styles.input}
           type="text"
@@ -69,6 +68,11 @@ class Ficha extends Component {
           onChangeText={this.getText}
         />
         <Button style={styles.boton} title="Next" onPress={this.nextPage} />
+      </View>
+        {this.state.usuarios.map(u => (
+          <Usuario verProfile={this.props.verProfile} key={u.id} {...u} />
+        ))}
+
       </View>
     );
   }
@@ -81,14 +85,17 @@ const styles = StyleSheet.create({
     borderColor: "gray",
     backgroundColor: "white",
     borderWidth: 1,
-    marginBottom:10,
+    marginBottom: 10,
+    borderRadius:5,
+    padding:10,
   },
-  container:{
-    color:'#fff'
+  container: {
+    color: "#fff",
+    margin:10,
   },
   boton: {
-    //margin: 10
-    // width:400,
+    margin: 10,
+    width:400,
   }
 });
 
