@@ -21,7 +21,7 @@ class Usuario extends Component {
   _onPressButton = () => {
     Alert.alert("funciona", "Esto es un mensaje");
   };
-
+//comentario
   componentDidMount() {
     this.setState({ obj: this.props });
   }
